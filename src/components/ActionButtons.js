@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import { Icon } from 'semantic-ui-react'
-import './ActionButtons.css';
+import './ActionButtons.css'
+import Header from './Header'
 
 class ActionButtons extends Component {
     render(){
         return(
-            <div>  
+            <div>
+                <Header></Header>
                 <div>
                 <Icon.Group size='big' className='padded'>
                 <a className='white-button' 
