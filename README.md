@@ -1,4 +1,4 @@
 To run locally, run npm start.
-\n
+<br/>
 This app was made with create-react-app.
-\n
+<br/>
