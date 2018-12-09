@@ -8,27 +8,22 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          time: null,
+          time: props.time
         };
       }
 
-    componentDidMount() {
-        //display time and update every second
-          setInterval(() => this.setState({
-            time: new Date().toLocaleString()
-            }), 1000)   
+    componentWillReceiveProps(){
+        this.setState({
+            time: this.props.time
+        })
     }
 
     render(){
         return(
-            <div>  
+            <div>
                 <div className='header'>
                 <h1>Hello Arturo</h1>
-                {
-                    this.state.time
-                    ?<h2>Today is {this.state.time}</h2>
-                    :null
-                }
+                    <h2>Today is {this.state.time}</h2>
                 </div> 
             </div>
         )

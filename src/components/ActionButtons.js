@@ -4,10 +4,33 @@ import './ActionButtons.css'
 import Header from './Header'
 
 class ActionButtons extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+          time: null,
+          load: null, 
+        };
+      }
+
+    componentDidMount() {
+        //load content simutaneously
+        this.setState({
+            load: true,
+            time: new Date().toLocaleString()
+        })
+        //update time every second
+        setInterval(() => this.setState({
+            time: new Date().toLocaleString(),
+        }), 1000) 
+    }
+
     render(){
         return(
-            <div>
-                <Header></Header>
+            <div>{this.state.load
+            ?<div>{this.state.time
+                ?<Header time={this.state.time}></Header>
+                :null}
                 <div>
                 <Icon.Group size='big' className='padded'>
                 <a className='white-button' 
@@ -46,6 +69,8 @@ class ActionButtons extends Component {
                 </a>
                 </Icon.Group> 
                 </div> 
+            </div>
+            :null}
             </div>
         )
     }
