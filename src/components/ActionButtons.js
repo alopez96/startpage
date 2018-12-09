@@ -39,6 +39,12 @@ class ActionButtons extends Component {
                     <Icon name='linkedin' />
                 </a>
                 </Icon.Group> 
+                <Icon.Group size='big' className='padded'>
+                <a className='white-button'
+                    href='https://calendar.google.com/calendar/r'>
+                    <Icon name='calendar' />
+                </a>
+                </Icon.Group> 
                 </div> 
             </div>
         )
