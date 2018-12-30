@@ -35,7 +35,7 @@ class ActionButtons extends Component {
                 <Icon.Group size='big' className='padded'>
                 <a className='white-button' 
                     href='https://github.com/alopez96'>
-                    <Icon color='white' name='github' />
+                    <Icon name='github' />
                 </a>
                 </Icon.Group>
                 <Icon.Group size='big' className='padded'>

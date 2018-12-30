@@ -23,3 +23,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+.inline {
+  display: inline-block;
+}
+
+.space h2{
+  margin:5px;
+}
