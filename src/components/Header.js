@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import './ActionButtons.css'
 import './Header.css'
 
+import { API_KEY } from '../key';
+
 
 class Header extends Component {
     
@@ -13,36 +15,48 @@ class Header extends Component {
           temp: '' ,
           temp_high: '',
           temp_low: '',
+          city: '',
         };
       }
 
     componentWillReceiveProps(){
+      //get time from ActionButtons.js
         this.setState({
             time: this.props.time
         })
     }
 
-    componentDidMount(){
-        var that = this
-        //santa rosa id location
-        var url = 'http://api.openweathermap.org/data/2.5/weather?id=5393287&units=imperial&appid=124937c31ac5b9be3ed8666a4de85528'
-        fetch(url)
-        .then(function(response) {
-          if (response.status >= 400) {
-            throw new Error("Bad response from server");
-          }
-          return response.json();
-        })
-        .then(function(data) {
-          console.log(data)
-          that.setState({
-            desc: data.weather[0].description,
-            temp: data.main.temp,
-            temp_high: data.main.temp_max,
-            temp_low: data.main.temp_min,
-          })
+    
+    componentDidMount() {
+      //get current location
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          this.fetchWeather(position.coords.latitude, position.coords.longitude);
+        },
+        error => {
+          this.setState({
+            error: 'Error Getting Weather Condtions'
+          });
+        }
+      );
+    }
+
+    fetchWeather(lat, lon) {
+      const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}&units=imperial`;
+      fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        this.setState({              
+          desc: data.weather[0].description,
+          temp: data.main.temp,
+          city: data.main.name,
+          temp_high: data.main.temp_max,
+          temp_low: data.main.temp_min,
         });
-      }
+      })
+      .catch(er => {console.debug('error', er)})
+    }
 
     render(){
         return(
