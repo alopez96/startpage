@@ -66,6 +66,7 @@ class Header extends Component {
                     <h2>Today is {this.state.time}</h2>
                 </div>
                 <div className='header'>
+                <h2>Here is the weather in your current location.</h2>
                     <div className='space'>
                         <h2 className='inline'>{this.state.desc}</h2>
                         <h2 className='inline'>{this.state.temp} F</h2>

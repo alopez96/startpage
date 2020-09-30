@@ -34,36 +34,36 @@ class ActionButtons extends Component {
                 <div>
                 <Icon.Group size='big' className='padded'>
                 <a className='white-button' 
-                    href='https://github.com/alopez96'>
+                    href='https://github.com/alopez96' target="_blank">
                     <Icon name='github' />
                 </a>
                 </Icon.Group>
                 <Icon.Group size='big' className='padded'>
                 <a className='white-button'
-                    href='https://mail.google.com/mail/u/0/#inbox'>
+                    href='https://mail.google.com/mail/u/0/#inbox' target="_blank">
                     <Icon name='mail' />
                     </a>
                 </Icon.Group> 
                 <Icon.Group size='big' className='padded'>
                 <a className='white-button'
-                    href='https://www.reddit.com/'>
-                    <Icon name='reddit' />
+                    href='https://google.com/' target="_blank">
+                    <Icon name='google' />
                 </a>
                 </Icon.Group> 
                 <Icon.Group size='big' className='padded'>
-                <a className='white-button'
+                <a className='white-button' target="_blank"
                 href='https://twitter.com/'>
                     <Icon name='twitter' />
                 </a>
                 </Icon.Group> 
                 <Icon.Group size='big' className='padded'>
-                <a className='white-button'
+                <a className='white-button' target="_blank"
                     href='https://www.linkedin.com/feed/'>
                     <Icon name='linkedin' />
                 </a>
                 </Icon.Group> 
                 <Icon.Group size='big' className='padded'>
-                <a className='white-button'
+                <a className='white-button' target="_blank"
                     href='https://calendar.google.com/calendar/r'>
                     <Icon name='calendar' />
                 </a>
